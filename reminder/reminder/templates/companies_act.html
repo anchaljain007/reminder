@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load static %}
+	<link rel="stylesheet" href="{% static 'companies_act.css' %}" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<title>Company Act</title>
+</head>
+<body>
+	<header>
+      <div class="wrapper">
+        <span class="color"
+          ><img class="logo" src="logo.png" alt=""
+        /></span>
+
+        <nav>
+          <ul>
+            <li><a href="../..">Home</a></li>
+            <li><a href=".." id="special">Services</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Sign up</a></li>
+            <li><a href="register">Register</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <h1>Companies Act</h1>
+    <div id="container">
+    <form >
+  	<div class="form-group col-md-8">
+    <label for="username"><b><h3>Username</h3></b></label>
+    <input type="text" class="form-control" id="username" placeholder="username" >
+
+    <label for="pass"><b><h3>Password</h3></b></label>
+    <input type="password" class="form-control" id="pass" placeholder="password" >
+
+    <div class="elements">
+  		
+  		<label for="Return_1"><h4>Return 1 Due Date:</h4></label>
+    	<input type="Date" name="Return_1">
+  	</div>
+
+  	<div class="elements">
+  		
+  		<label for="Return_2"><h4>Return 2 Due Date:</h4></label>
+    	<input type="Date" name="Return_2">
+
+  	</div>
+
+    <div><br></div>
+
+    <button type="button" class="btn btn-primary btn-lg">Save</button>
+
+	</div>
+	</form>
+	</div>
+</body>
+</html>

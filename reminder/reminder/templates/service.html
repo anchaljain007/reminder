@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alice&display=swap"
+      rel="stylesheet"
+    />
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'service.css' %}">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <title>Services</title>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <span class="color">
+          <img class="logo" src="{% static 'images\logo.png' %}" alt="" />
+        </span>
+
+        <nav>
+          <ul>
+            <li><a href="..">Home</a></li>
+            <li><a href="#" id="special">Services</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Sign up</a></li>
+            <li><a href="register">Register</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <h1><strong>Our Services</strong></h1>
+    <div id="container">
+      <div class="services">
+        <h2><a href="incometax">Income Tax</a></h2>
+        <p>
+          Here we would send a reminder mail for every due date of periodic
+          installments included in Advance Tax. The due dates for Income Tax
+          Return and TDS return will also be reminder.
+        </p>
+      </div>
+
+      <div class="services">
+        <h2><a href="gst">GST</a></h2>
+        <p>
+          Here we will send you reminder mails for GSTR1 and GSTR3B.Reminders
+          for ANnual return will also be sent.
+        </p>
+      </div>
+
+      <div class="services">
+        <h2><a href="companies_act">Comapanies Act</a></h2>
+        <p>
+          Here reminder mails for return 1 and return 2 will be sent to you
+          prior to the due dates
+        </p>
+      </div>
+
+      <div class="services">
+        <h2><a href="accounting">Accounting</a></h2>
+        <p>
+          Reminder mails regarding all important due dates regarding to your
+          account will be sent.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

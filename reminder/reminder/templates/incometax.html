@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'incometax.css' %}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<title>Income Tax</title>
+</head>
+
+<body>
+	<header>
+		<div class="wrapper">
+			<span class="color"><img class="logo" src="{% static 'images\logo.png' %}" alt="" /></span>
+
+			<nav>
+				<ul>
+					<li><a href="../..">Home</a></li>
+					<li><a href=".." id="special">Services</a></li>
+					<li><a href="#">Login</a></li>
+					<li><a href="#">Sign up</a></li>
+					<li><a href="register">Register</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<h1>Income Tax</h1>
+	<div id="container">
+		<form method="POST" action="activation_sent.html">
+			{% csrf_token %}
+			<div class="form-group col-md-8" id="outerblock">
+
+
+				<div class="elements" style="background: #FFFFFF">
+					<h1 class="subtitles">Advance Tax</h1>
+					<div class="form-group">
+						<label for="first_install">
+							<h4>First Installment Due Date:</h4>
+						</label>
+						<input type="Date" name="first_install">
+					</div>
+
+					<div class="form-group">
+						<label for="second_install">
+							<h4>Second Installment Due Date:</h4>
+						</label>
+						<input type="Date" name="second_install">
+					</div>
+
+					<div class="form-group">
+						<label for="third_install">
+							<h4>Third Installment Due Date:</h4>
+						</label>
+						<input type="Date" name="third_install">
+					</div>
+
+					<div class="form-group">
+						<label for="fourth_install">
+							<h4>Fourth Installment Due Date:</h4>
+						</label>
+						<input type="Date" name="fourth_install">
+					</div>
+				</div>
+
+				<div class="elements">
+
+					<label for="taxreturn">
+						<h4>Tax Return Date:</h4>
+					</label>
+					<input type="Date" name="taxreturn">
+
+				</div>
+
+				<div class="elements">
+
+					<label for="tdsreturn">
+						<h4>TDS Return Date:</h4>
+					</label>
+					<input type="Date" name="tdsreturn">
+
+				</div>
+				<div><br></div>
+
+				<button type="button" class="btn btn-primary btn-lg">Save</button>
+
+		</form>
+	</div>
+</body>
+
+</html>
