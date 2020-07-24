@@ -1,0 +1,210 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Alice&display=swap"
+        rel="stylesheet"
+      />
+      <!-- <link rel="stylesheet" type="text/css" href="../static/card.css"> -->
+       {% load static %}
+      <link rel="stylesheet" type="text/css" href="{% static 'profile.css' %}">
+     
+	  <title>Services</title>
+    </head>
+    <body onload="startTime()">
+      <header>
+        <div class="wrapper">
+          <span class="color">
+              <!-- <img class="logo" src="..\static\images\logo.png" alt="" /> -->
+            <img class="logo" src="{% static 'images\logo.png' %}" alt="" />
+          </span>
+  
+          <nav>
+            <ul>
+            
+			  
+			  <li><a >Welcome , {{user.username}}</a></li>
+			  
+			  <li><a href="../../logout/">Logout</a></li>
+           
+            </ul>
+		  </nav>
+		
+		</div>
+
+      </header>
+	  <hr>
+	 
+	<div id="primary-content">
+	<div class="wrapper">
+	<article>
+	<h4 class="featured-cont">Featured Content</h4>
+	<p>
+		
+  		<div class="cards">
+			{% block includes %}
+				{% if income_tax %}
+			  <div class="card" onclick="window.location='../service/incometax'" style="width:100%">
+				<img src="{% static 'images/incometax.png' %}"  alt="Avatar" style="width:100%">
+				<div class="container">
+				  <h4><b>Income Tax Act</b></h4>
+				  <p>Income Tax file-up reminder</p>
+				</div>
+			  </div>
+			  {% endif %}
+			  {% if gst %}
+			  <div class="card" onclick="window.location='../service/gst'" style="width:100%">
+				<img src="{% static 'images/GST.png' %}" alt="Avatar" style="width:100%">
+				<div class="container">
+				  <h4><b>GST Act</b></h4>
+				  <p>GST return file-up reminder</p>
+				</div>
+			  </div>
+			  {% endif %}
+			  {% if accounting_act %}
+			  <div class="card" onclick="window.location='../service/accounting'" style="width:100%">
+				<img src="{% static 'images/Accounting.png' %}" alt="Avatar" style="width:100% ; height:55% ">
+				<div class="container">
+				  <h4><b>Accounting ACT</b></h4>
+				  <p>Accounting file-up reminder</p>
+				</div>
+			  </div>
+			  {% endif %}
+			  {% if companies_act %}
+			  <div class="card" onclick="window.location='../service/companies_act'" style="width:100%">
+				<img src="{% static 'images/Company_Act.png' %}" alt="Avatar" style="width:100%" >
+				<div class="container">
+				  <h4><b>Companies Act</b></h4>
+				  <p>Companies Act file-up reminder</p>
+				</div>
+			  </div>
+			  {% endif %}
+			  {% endblock includes %}
+			</div>
+			</p>
+		  </article>
+		</div>
+		
+	  </div>
+	  
+
+
+
+ 
+    <div style="color: azure;"><h1> Calendar</h1></div>
+ <table>
+	<tr>
+	  <th class="day-name"></th>
+	  <th class="day-name"></th>
+	  <th class="day-name"></th>
+	  <th class="day-name"></th>
+	  <th class="day-name"></th>
+	  <th class="day-name"></th>
+	  <th class="day-name"></th>
+	</tr>
+	<tr>
+	  <td class="day"><span class="number">31</span></td>
+	  <td class="day"><span class="number">1</span><span class="event"></span><span class="event"></span></td>
+	  <td class="day"><span class="number">2</span></td>
+	  <td class="day"><span class="number">3</span><span class="event event-multiday-start"></span></td>
+	  <td class="day"><span class="number">4</span><span class="event event-multiday"></span><span class="event event-multiday-start eventclass" style="background-color:#5a9ab2;"></span><span class="event"></td>
+	  <td class="day"><span class="number">5</span><span class="event event-multiday-finish"></span><span class="event event-multiday eventclass" style="background-color:#5a9ab2;"></span></td>
+	  <td class="day"><span class="number">6</span><span class="event event-ghost"></span><span class="event event-multiday-finish eventclass" style="background-color:#5a9ab2;"></span></td>
+	</tr>
+	<tr>
+	  <td class="day"><span class="number">7</span></td>
+	  <td class="day"><span class="number">8</span><span class="event"></span></td>
+	  <td class="day"><span class="number">9</span></td>
+	  <td class="day"><span class="number">10</span></td>
+	  <td class="day"><span class="number">11</span></td>
+	  <td class="day"><span class="number">12</span></td>
+	  <td class="day"><span class="number">13</span></td>
+	</tr>
+	<tr>
+	  <td class="day"><span class="number">14</span></td>
+	  <td class="day"><span class="number">15</span></td>
+	  <td class="day"><span class="number">16</span><span class="event">IT Due</span></td>
+	  <td class="day"><span class="number">17</span><span class="event"></span></td>
+	  <td class="day"><span class="number">18</span></td>
+	  <td class="day"><span class="number">19</span><div>GST Due</div></td>
+	  <td class="day"><span class="number">20</span></td>
+	</tr>
+	<tr>
+	  <td class="day"><span class="number">21</span></td>
+	  <td class="day"><span class="number">22</span></td>
+	  <td class="day"><span class="number">23</span></td>
+	  <td class="day"><span class="number">24</span></td>
+	  <td class="day"><span class="number">25</span></td>
+	  <td class="day"><span class="number">26</span></td>
+	  <td class="day"><span class="number">27</span><span class="event event-multiday-start" style="background-color:#da5f5f;"></td>
+	</tr>
+	<tr>
+	  <td class="day"><span class="number">28</span><span class="event event-multiday" style="background-color:#da5f5f;"></td>
+	  <td class="day today"><span class="number">29</span><span class="event event-multiday-finish" style="background-color:#da5f5f;"></td>
+	  <td class="day"><span class="number">30</span></td>
+	  <td class="day"><span class="number">1</span></td>
+	  <td class="day"><span class="number">2</span></td>
+	  <td class="day"><span class="number">3</span></td>
+	  <td class="day"><span class="number">4</span></td>
+	</tr>
+	<tr>
+	  <td class="day"><span class="number">5</span></td>
+	  <td class="day"><span class="number">6</span><span class="event"></span></td>
+	  <td class="day"><span class="number">7</span></td>
+	  <td class="day"><span class="number">8</span></td>
+	  <td class="day"><span class="number">9</span></td>
+	  <td class="day"><span class="number">10</span></td>
+	  <td class="day"><span class="number">11</span></td>
+	</tr>
+  </table>
+
+  <script type="text/javascript">
+    
+
+function calender(){
+    var day=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    var month= ["January","February","March","April","May","June","July",
+            "August","September","October","November","December"];
+    var d=new Date();
+    setText('calender-day',day[d.getDay()]);
+    setText('calender-date',d.getDate());
+    setText('calender-month-year',month[d.getMonth()]+' '+(1900+d.getYear()));
+};
+
+function setText(id, val){
+    if(val<10){
+        val='0'+val;
+    }
+    document.getElementById(id).innerHTML=val;  
+};
+
+// call calender()
+
+window.onload=calender;
+
+ </script>
+
+  
+</body>
+
+<footer>
+  <hr>
+	<div class="wrapper">
+	  <div id="footer-info">
+		<p>Copyright 2020 Auto-Reminder-System. All rights reserved.</p>
+		<p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p>
+	  </div>
+	  <div id="footer-links">
+		<ul>
+		  <p><h5>Company</h5></p>
+		  <li><a href="../../aboutus/">About Us</a></li>
+		  <li><a href="../../team/">Meet The Team</a></li>
+	   
+		</ul>
+	  </div>
+	  <div class="clear"></div>
+	</div>
+  </footer>
+  
+
+  </html>

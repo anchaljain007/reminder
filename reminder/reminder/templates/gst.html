@@ -1,83 +1,103 @@
 <!DOCTYPE html>
-<html>
 <head>
-{% load static %}
-	<link rel="stylesheet" href="{% static 'gst.css' %}" />
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-	<title>GST</title>
-</head>
-<body>
-	<header>
-      <div class="wrapper">
-        <span class="color"
-          ><img class="logo" src="logo.png" alt=""
-        /></span>
+  {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/signup.css' %}">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alice&display=swap"
+        rel="stylesheet"
+      />
+    <title>GST</title>
 
-        <nav>
-          <ul>
-            <li><a href="../..">Home</a></li>
-            <li><a href=".." id="special">Services</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Sign up</a></li>
-            <li><a href="register">Register</a></li>
-          </ul>
-        </nav>
+  </head>
+  <header>
+    <div class="wrapper">
+      <span class="color"
+        ><img class="logo" src="{% static '/images/logo.png' %}" alt="logo"
+      /></span>
+
+      <nav>
+        <ul>
+          <li><a href="../../profile">Home</a></li>
+          <li><a href="../../logout/">Logout</a></li>
+		  <li><a > {{user.username}}</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+<hr>
+  <div class="main">
+    
+    <form method="POST" class='form'>
+      <div class="heading"><h1>GSTR1</h1></div>
+      {% csrf_token %} 
+      <input id='username' name='username' type='hidden' value={{user.username}}>
+      <p class='field required '>
+        <label class='label required' for='duration'>Duration</label>
+        <p class='field half'>
+        <label class='label required ' for='duration'>Monthly</label>
+        <input class='' id='duration' name='duration' type='radio' value='Monthly'>
+        </p>
+        <p class='field half'>
+        <label class='label required' for='duration'>Quaterly</label>
+        <input class='' id='duration' name='duration' type='radio' value='Quaterly'>
+      </p>
+    </p>
+      <p class='field required error'>
+        <label class='label required' for='first_due_GSTR1'>
+          First Due Date:</label>
+        <input class='text-input' id='first_due_GSTR1' name='first_due_GSTR1' required type='date'>
+      </p>
+      <p><h2>................................................................................................</h2></p>
+      <p class='field'>
+      <div class="heading"><h1>GSTR3B</h1></div></p>
+      <p class='field required error'>
+       
+        <label class='label required' for='first_due_GSTR3B'>
+          First Due Date:</label>
+        <input class='text-input' id='first_due_GSTR3B' name='first_due_GSTR3B' required type='date'>
+      </p>
+      <p><h2>................................................................................................</h2></p>
+      <p class='field required error'>
+       
+        <label class='label required' for='annual_return'>
+          Annual Return Date:</label>
+        <input class='text-input' id='annual_return' name='annual_return' required type='date'>
+      </p>
+
+      <p><h2>................................................................................................</h2></p>
+      <p class='field required error'>
+       
+        <label class='label required' for='audit'>
+			Audit Date:
+		</label>
+        <input class='text-input' id='audit' name='audit' required type='date'>
+      </p>
+
+      <p class='field required'></p>
+      <p class='field required half'>
+        <input class='button' type='submit' value='Submit'>
+      </p>
+     </form>
+   </div>
+  
+   <footer>
+  <hr>
+    <div class="wrapper">
+      <div id="footer-info">
+        <p>Copyright 2020 Auto-Reminder-System. All rights reserved.</p>
+        <p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p>
       </div>
-    </header>
-
-    <h1>GST</h1>
-
-    <div id="container">
-    <form>
-  	<div class="form-group col-md-8">
-    <label for="username"><b><h3>Username</h3></b></label>
-    <input type="text" class="form-control" id="username" placeholder="username" >
-
-    <label for="pass"><b><h3>Password</h3></b></label>
-    <input type="password" class="form-control" id="pass" placeholder="password" >
-
-  	<div class="elements">
-  		<h1 class="subtitles">GSTR1</h1>
-
-  		<div id="duration">
-  			<h2>Duration:</h2>
-  			<label><h4>Monthly</h4>
-  				<input type="radio" name="Duration"><br>
-  			</label>
-  			<label><h4>Quaterely</h4>
-  				<input type="radio" name="Duration">
-  			</label>
-  		</div>
-
-  		<div class="form-group">
-    	<label for="first_due_GSTR1"><h4>First Due Date:</h4></label>
-    	<input type="Date" name="first_due_GSTR1">
-	  	</div>
-
-  	</div>
-
-  	<div class="elements">
-  		<h1 class="subtitles">GSTR3B</h1>
-
-  		<div class="form-group">
-    	<label for="first_due_GSTR3B"><h4>First Due Date:</h4></label>
-    	<input type="Date" name="first_due_GSTR3B">
-	  	</div>
-
-  	</div>
-
-  	<div class="elements">
-  		
-  		<label for="annualreturn"><h4>Annual Return Date:</h4></label>
-    	<input type="Date" name="annualreturn">
-
-  	</div>
-
-  	<div><br></div>
-
-  	<button type="button" class="btn btn-primary btn-lg">Save</button>
-
-	</form>
-	</div>
-</body>
-</html>
+      <div id="footer-links">
+        <ul>
+          <p><h5>Company</h5></p>
+          <li><a href="../../aboutus/">About Us</a></li>
+          <li><a href="../../team/">Meet The Team</a></li>
+       
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </footer>
+   </body>
+   </html>

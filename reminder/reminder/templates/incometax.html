@@ -1,91 +1,105 @@
 <!DOCTYPE html>
-<html>
-
 <head>
-{% load static %}
-	<link rel="stylesheet" type="text/css" href="{% static 'incometax.css' %}">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-	<title>Income Tax</title>
-</head>
+  {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/signup.css' %}">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alice&display=swap"
+        rel="stylesheet"
+      />
+    <title>Income Tax</title>
 
-<body>
-	<header>
-		<div class="wrapper">
-			<span class="color"><img class="logo" src="{% static 'images\logo.png' %}" alt="" /></span>
+  </head>
+  <header>
+    <div class="wrapper">
+      <span class="color"
+        ><img class="logo" src="{% static '/images/logo.png' %}" alt="logo"
+      /></span>
 
-			<nav>
-				<ul>
-					<li><a href="../..">Home</a></li>
-					<li><a href=".." id="special">Services</a></li>
-					<li><a href="#">Login</a></li>
-					<li><a href="#">Sign up</a></li>
-					<li><a href="register">Register</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+      <nav>
+        <ul>
+          <li><a href="../../profile">Home</a></li>
+          <li><a href="../../logout/">Logout</a></li>
+		  <li><a > {{user.username}}</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+<hr>
+  <div class="main">
+    
+    <form method="POST" class='form'>
+      <div class="heading"><h1>Advance Tax</h1></div>
+      {% csrf_token %} 
+	  <input id='username' name='username' type='hidden' value={{user.username}}>
+      <p class='field required error'>
+        <label class='label required' for='first_install'>
+			First Installment Due Date:</label>
+        <input class='text-input' id='first_install' name='first_install' required type='date'>
+	  </p>
+	  <p class='field required error'>
+        <label class='label required' for='second_install'>
+			Second Installment Due Date:</label>
+        <input class='text-input' id='second_install' name='second_install' required type='date'>
+	  </p>
+	  <p class='field required error'>
+        <label class='label required' for='third_install'>
+			Third Installment Due Date:</label>
+        <input class='text-input' id='third_install' name='third_install' required type='date'>
+	  </p>
+	  <p class='field required error'>
+        <label class='label required' for='fourth_install'>
+			Fourth Installment Due Date:</label>
+        <input class='text-input' id='fourth_install' name='fourth_install' required type='date'>
+      </p>
+  <p><h2>................................................................................................</h2></p>
+  <p class='field required error'>
+	<label class='label required' for='taxreturn'>
+		Tax Return Date:</label>
+	<input class='text-input' id='taxreturn' name='taxreturn' required type='date'>
+  </p>
+  <p><h2>................................................................................................</h2></p>
+      <p class='field required error'>
+       
+        <label class='label required' for='tdsreturn'>
+			TDS Return Date:
+		</label>
+        <input class='text-input' id='tdsreturn' name='tdsreturn' required type='date'>
+      </p>
 
-	<h1>Income Tax</h1>
-	<div id="container">
-		<form method="POST" action="activation_sent.html">
-			{% csrf_token %}
-			<div class="form-group col-md-8" id="outerblock">
-
-
-				<div class="elements" style="background: #FFFFFF">
-					<h1 class="subtitles">Advance Tax</h1>
-					<div class="form-group">
-						<label for="first_install">
-							<h4>First Installment Due Date:</h4>
-						</label>
-						<input type="Date" name="first_install">
-					</div>
-
-					<div class="form-group">
-						<label for="second_install">
-							<h4>Second Installment Due Date:</h4>
-						</label>
-						<input type="Date" name="second_install">
-					</div>
-
-					<div class="form-group">
-						<label for="third_install">
-							<h4>Third Installment Due Date:</h4>
-						</label>
-						<input type="Date" name="third_install">
-					</div>
-
-					<div class="form-group">
-						<label for="fourth_install">
-							<h4>Fourth Installment Due Date:</h4>
-						</label>
-						<input type="Date" name="fourth_install">
-					</div>
-				</div>
-
-				<div class="elements">
-
-					<label for="taxreturn">
-						<h4>Tax Return Date:</h4>
-					</label>
-					<input type="Date" name="taxreturn">
-
-				</div>
-
-				<div class="elements">
-
-					<label for="tdsreturn">
-						<h4>TDS Return Date:</h4>
-					</label>
-					<input type="Date" name="tdsreturn">
-
-				</div>
-				<div><br></div>
-
-				<button type="button" class="btn btn-primary btn-lg">Save</button>
-
-		</form>
-	</div>
-</body>
-
-</html>
+      <p><h2>................................................................................................</h2></p>
+      <p class='field required error'>
+       
+        <label class='label required' for='audit'>
+			Audit Date:
+		</label>
+        <input class='text-input' id='audit' name='audit' required type='date'>
+      </p>
+	 
+	  <p class='field required'></p>
+      <p class='field required half'>
+        <input class='button' type='submit' value='Submit'>
+      </p>
+     </form>
+   </div>
+  
+   <footer>
+  <hr>
+    <div class="wrapper">
+      <div id="footer-info">
+        <p>Copyright 2020 Auto-Reminder-System. All rights reserved.</p>
+        <p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p>
+      </div>
+      <div id="footer-links">
+        <ul>
+          <p><h5>Company</h5></p>
+          <li><a href="../../aboutus/">About Us</a></li>
+          <li><a href="../../team/">Meet The Team</a></li>
+       
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </footer>
+   </body>
+   </html>

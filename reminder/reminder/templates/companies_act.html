@@ -1,59 +1,78 @@
 <!DOCTYPE html>
-<html>
 <head>
-{% load static %}
-	<link rel="stylesheet" href="{% static 'companies_act.css' %}" />
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-	<title>Company Act</title>
-</head>
-<body>
-	<header>
-      <div class="wrapper">
-        <span class="color"
-          ><img class="logo" src="logo.png" alt=""
-        /></span>
+  {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/signup.css' %}">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alice&display=swap"
+        rel="stylesheet"
+      />
+    <title>Companies Act</title>
 
-        <nav>
-          <ul>
-            <li><a href="../..">Home</a></li>
-            <li><a href=".." id="special">Services</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Sign up</a></li>
-            <li><a href="register">Register</a></li>
-          </ul>
-        </nav>
+  </head>
+  <header>
+    <div class="wrapper">
+      <span class="color"
+        ><img class="logo" src="{% static '/images/logo.png' %}" alt="logo"
+      /></span>
+
+      <nav>
+        <ul>
+          <li><a href="../../profile">Home</a></li>
+          <li><a href="../../logout/">Logout</a></li>
+		  <li><a > {{user.username}}</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+<hr>
+  <div class="main">
+    
+    <form method="POST" class='form'>
+      {% csrf_token %} 
+      <input id='username' name='username' type='hidden' value={{user.username}}>
+      <div class="heading" ><h1>Companies Act</h1></div>
+       <p class='field required error'>
+        <label class='label required' for='Return_1'>
+          Return 1 Due Date:</label>
+        <input class='text-input' id='Return_1' name='Return_1' required type='date'>
+      </p>
+      <p><h2>................................................................................................</h2></p>
+
+  
+      <p class='field required error'>
+       
+        <label class='label required' for='Return_2'>
+          Return 2 Due Date:
+</label>
+        <input class='text-input' id='Return_2' name='Return_2' required type='date'>
+      </p>
+
+    
+      <p class='field required'></p>
+      <p class='field required half'>
+        <input class='button' type='submit' value='Submit'>
+      </p>
+     </form>
+   </div>
+  
+   <footer>
+  <hr>
+    <div class="wrapper">
+      <div id="footer-info">
+        <p>Copyright 2020 Auto-Reminder-System. All rights reserved.</p>
+        <p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p>
       </div>
-    </header>
-
-    <h1>Companies Act</h1>
-    <div id="container">
-    <form >
-  	<div class="form-group col-md-8">
-    <label for="username"><b><h3>Username</h3></b></label>
-    <input type="text" class="form-control" id="username" placeholder="username" >
-
-    <label for="pass"><b><h3>Password</h3></b></label>
-    <input type="password" class="form-control" id="pass" placeholder="password" >
-
-    <div class="elements">
-  		
-  		<label for="Return_1"><h4>Return 1 Due Date:</h4></label>
-    	<input type="Date" name="Return_1">
-  	</div>
-
-  	<div class="elements">
-  		
-  		<label for="Return_2"><h4>Return 2 Due Date:</h4></label>
-    	<input type="Date" name="Return_2">
-
-  	</div>
-
-    <div><br></div>
-
-    <button type="button" class="btn btn-primary btn-lg">Save</button>
-
-	</div>
-	</form>
-	</div>
-</body>
-</html>
+      <div id="footer-links">
+        <ul>
+          <p><h5>Company</h5></p>
+          <li><a href="../../aboutus/">About Us</a></li>
+          <li><a href="../../team/">Meet The Team</a></li>
+       
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </footer>
+   </body>
+   </html>
